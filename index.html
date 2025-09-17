@@ -3,7 +3,7 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Nova Catalyst Media — Reach. Engage. Grow Your Investor Base.</title>
 <meta name="description" content="We connect financial firms with engaged retail investors through influencer-driven campaigns. Reach, engage, and grow your investor base.">
-<link rel="stylesheet" href="/assets/styles.css?v=2">
+<link rel="stylesheet" href="/assets/styles.css?v=3">
 </head>
 <body>
 <header>
@@ -22,25 +22,33 @@
 
 <main class="container">
 
-  <!-- LIGHT, CONTAINED PARTICLE HERO -->
-<section class="hero particle-hero">
-  <div id="ncmParticles" aria-hidden="true"></div>
+  <!-- HERO (light, Clerk-style) -->
+  <section class="hero hero-clean">
+    <div class="hero-content">
+      <h1>Nova Catalyst Media</h1>
+      <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
+      <p class="subtext">
+        We specialize in connecting financial firms with highly engaged retail investors globally.
+        Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
+        reach the right audience efficiently and effectively.
+      </p>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+        <a href="contact.html"><button>Get in Touch</button></a>
+        <a href="#services" class="small" style="align-self:center">See what we do →</a>
+      </div>
+    </div>
 
-  <div class="hero-content">
-    <img src="assets/logo.jpg" alt="Nova Catalyst Media" class="hero-logo" style="width:90px;border-radius:12px;margin-bottom:12px">
-    <h1>Nova Catalyst Media</h1>
-    <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
-    <p class="subtext">
-      We specialize in connecting financial firms with highly engaged retail investors globally.
-      Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
-      reach the right audience efficiently and effectively.
-    </p>
-    <div><a href="contact.html"><button>Get in Touch</button></a></div>
-  </div>
-</section>
+    <!-- subtle “trusted by / example categories” row -->
+    <div class="badges">
+      <span class="badge">NASDAQ / NYSE Tickers</span>
+      <span class="badge">Brokerages & Platforms</span>
+      <span class="badge">Research & Education</span>
+      <span class="badge">Global Retail Investors</span>
+    </div>
+  </section>
 
   <!-- SERVICES -->
-  <section style="margin-top:28px">
+  <section id="services" style="margin-top:28px">
     <h2>What We Do</h2>
     <div class="grid">
       <div class="card service reveal">
@@ -49,24 +57,16 @@
       </div>
       <div class="card service reveal">
         <h3 class="title">Broker & Trading Platform Promotions</h3>
-        <p>Increase visibility for globally accessible financial services—from brokerages to trading platforms—with campaigns designed for maximum engagement.</p>
+        <p>Increase visibility for globally accessible financial services with campaigns designed for maximum engagement.</p>
       </div>
       <div class="card service reveal">
         <h3 class="title">Multi-Channel Influencer Marketing</h3>
-        <p>Leverage a diverse network of finance-focused influencers to reach retail investors across channels, delivering measurable results and high ROI.</p>
+        <p>Leverage a diverse network of finance-focused influencers to reach retail investors and deliver measurable ROI.</p>
       </div>
       <div class="card service reveal">
         <h3 class="title">Custom Campaigns</h3>
-        <p>Have a unique promotion in mind? We design bespoke solutions for services, education, or investor-focused offerings.</p>
+        <p>Bespoke solutions for unique goals—specific services, educational content, or other investor-focused offerings.</p>
       </div>
-    </div>
-  </section>
-
-  <!-- PARALLAX STRIP -->
-  <section class="parallax-banner reveal" role="img" aria-label="Market data and charts imagery">
-    <div class="parallax-overlay">
-      <h3>Campaigns built around market moments</h3>
-      <p class="small">We meet investors where attention is highest—across news cycles, earnings, and macro events.</p>
     </div>
   </section>
 
@@ -83,25 +83,7 @@
         <li><strong>Transparent Reporting</strong> — Track performance and engagement at every step.</li>
         <li><strong>Cost-Efficient Solutions</strong> — Impactful results without traditional ad costs.</li>
       </ul>
-    </div>
-  </section>
-
-  <!-- “SNAPSHOTS” IMAGE ROW -->
-  <section style="margin-top:28px">
-    <h2>Campaign Snapshots</h2>
-    <div class="snapshots">
-      <figure class="shot reveal">
-        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1200&auto=format&fit=crop" alt="Analytics dashboard">
-        <figcaption class="small">Performance dashboards with clear KPIs</figcaption>
-      </figure>
-      <figure class="shot reveal">
-        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Content planning board">
-        <figcaption class="small">Content calendars aligned to earnings & news</figcaption>
-      </figure>
-      <figure class="shot reveal">
-        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1200&auto=format&fit=crop" alt="Mobile-first creatives">
-        <figcaption class="small">Mobile-first creatives for investor channels</figcaption>
-      </figure>
+      <p class="small">Whether you’re promoting a stock, a brokerage, or a financial service, our focus is simple: reach, engage, and grow your investor base.</p>
     </div>
   </section>
 
@@ -118,57 +100,11 @@
 
 <footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
 
-<!-- Footer year + reveal -->
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
-const els = document.querySelectorAll('.reveal');
-const io = new IntersectionObserver((entries)=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
-  });
-},{threshold:.12});
+// simple scroll reveal
+const els=document.querySelectorAll('.reveal');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
 els.forEach(el=>io.observe(el));
 </script>
-
-<!-- Particles background -->
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-<script>
-  tsParticles.load("tsparticles", {
-    background: { color: "#0d1117" },
-    particles: {
-      number: { value: 60 },
-      color: { value: "#ffffff" },
-      shape: { type: "circle" },
-      opacity: { value: 0.4 },
-      size: { value: { min: 1, max: 3 } },
-      move: { enable: true, speed: 1, outModes: "out" },
-      links: { enable: true, distance: 150, color: "#8b8b8b", opacity: 0.28, width: 1 }
-    },
-    interactivity: { events: { onHover: { enable: true, mode: "repulse" } } }
-  });
-</script>
 </body></html>
-
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
-<script>
-  tsParticles.load("ncmParticles", {
-    background: { color: "transparent" },   // keep your page light
-    particles: {
-      number: { value: 35 },
-      color: { value: "#9ca3af" },          // light gray dots
-      links: { enable: true, distance: 130, color: "#cbd5e1", opacity: 0.25, width: 1 },
-      opacity: { value: 0.35 },
-      size: { value: { min: 1, max: 3 } },
-      move: { enable: true, speed: 0.6, outModes: "out" },
-      shape: { type: "circle" }
-    },
-    interactivity: {
-      events: {
-        onHover: { enable: true, mode: "repulse" },  // mild hover
-        resize: true
-      },
-      modes: { repulse: { distance: 80, duration: 0.3 } }
-    },
-    detectRetina: true
-  });
-</script>
