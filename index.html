@@ -21,16 +21,27 @@
 </header>
 
 <main class="container">
-  <!-- HERO -->
-  <section class="hero">
-    <h1>Nova Catalyst Media</h1>
-    <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
-    <p class="subtext">
-      We specialize in connecting financial firms with highly engaged retail investors globally.
-      Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
-      reach the right audience efficiently and effectively.
-    </p>
-    <div><a href="contact.html"><button>Get in Touch</button></a></div>
+
+  <!-- HERO WITH IMAGE COLLAGE -->
+  <section class="hero hero-with-visual">
+    <div class="hero-copy">
+      <h1>Nova Catalyst Media</h1>
+      <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
+      <p class="subtext">
+        We specialize in connecting financial firms with highly engaged retail investors globally.
+        Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
+        reach the right audience efficiently and effectively.
+      </p>
+      <div><a href="contact.html"><button>Get in Touch</button></a></div>
+    </div>
+
+    <!-- Collage (replace URLs later with /assets/your-image.jpg) -->
+    <div class="hero-visual" aria-hidden="true">
+      <img class="hv hv-a" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="">
+      <img class="hv hv-b" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1200&auto=format&fit=crop" alt="">
+      <img class="hv hv-c" src="https://images.unsplash.com/photo-1549421263-28e5d6b3f0b8?q=80&w=1200&auto=format&fit=crop" alt="">
+      <img class="hv hv-d" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="">
+    </div>
   </section>
 
   <!-- SERVICES -->
@@ -56,7 +67,15 @@
     </div>
   </section>
 
-  <!-- WHY NCM -->
+  <!-- PARALLAX STRIP -->
+  <section class="parallax-banner reveal" role="img" aria-label="Market data and charts imagery">
+    <div class="parallax-overlay">
+      <h3>Campaigns built around market moments</h3>
+      <p class="small">We meet investors where attention is highest—across news cycles, earnings, and macro events.</p>
+    </div>
+  </section>
+
+  <!-- WHY -->
   <section style="margin-top:28px">
     <h2>Why Nova Catalyst Media</h2>
     <div class="card reveal">
@@ -65,11 +84,29 @@
         Our team manages campaigns for a 7-figure global audience of active traders and investors.
       </p>
       <ul class="small">
-        <li><strong>Targeted Campaigns</strong> — Each promotion is tailored to your goals and audience.</li>
+        <li><strong>Targeted Campaigns</strong> — Tailored to your goals and audience.</li>
         <li><strong>Transparent Reporting</strong> — Track performance and engagement at every step.</li>
-        <li><strong>Cost-Efficient Solutions</strong> — Impactful results without traditional advertising costs.</li>
+        <li><strong>Cost-Efficient Solutions</strong> — Impactful results without traditional ad costs.</li>
       </ul>
-      <p class="small">Whether you’re promoting a new stock, a brokerage, or a financial service, our goal is simple: help you reach, engage, and grow your investor base.</p>
+    </div>
+  </section>
+
+  <!-- “SNAPSHOTS” IMAGE ROW -->
+  <section style="margin-top:28px">
+    <h2>Campaign Snapshots</h2>
+    <div class="snapshots">
+      <figure class="shot reveal">
+        <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=1200&auto=format&fit=crop" alt="Analytics dashboard">
+        <figcaption class="small">Performance dashboards with clear KPIs</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="Content planning board">
+        <figcaption class="small">Content calendars aligned to earnings & news</figcaption>
+      </figure>
+      <figure class="shot reveal">
+        <img src="https://images.unsplash.com/photo-1504805572947-34fad45aed93?q=80&w=1200&auto=format&fit=crop" alt="Mobile-first creatives">
+        <figcaption class="small">Mobile-first creatives for investor channels</figcaption>
+      </figure>
     </div>
   </section>
 
@@ -81,13 +118,15 @@
       <div><a href="contact.html"><button>Contact Us to Get Started</button></a></div>
     </div>
   </section>
+
 </main>
 
 <footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
 
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
-// subtle scroll reveal
+
+// scroll reveal
 const els = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
