@@ -1,14 +1,15 @@
 <!doctype html><html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Nova Catalyst Media — Financial Marketing</title>
-<meta name="description" content="Performance marketing and content for finance brands—stocks, trading, fintech, and research.">
+<title>Nova Catalyst Media — Reach. Engage. Grow Your Investor Base.</title>
+<meta name="description" content="We connect financial firms with engaged retail investors through influencer-driven campaigns. Reach, engage, and grow your investor base.">
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
 <header>
   <nav>
     <div style="display:flex;gap:10px;align-items:center">
+      <img class="logo" src="assets/logo.jpg" alt="Nova Catalyst Media logo" onerror="this.style.display='none'">
       <strong>Nova Catalyst Media</strong>
     </div>
     <div>
@@ -20,35 +21,79 @@
 </header>
 
 <main class="container">
-  <section class="hero card">
-    <h1>Content and growth for finance brands.</h1>
-    <p class="small">We help brokers, research shops, and fintech products win attention with compliant, compelling campaigns—built for investors.</p>
-    <div><a href="contact.html"><button>Start a project</button></a></div>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>Nova Catalyst Media</h1>
+    <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
+    <p class="subtext">
+      We specialize in connecting financial firms with highly engaged retail investors globally.
+      Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
+      reach the right audience efficiently and effectively.
+    </p>
+    <div><a href="contact.html"><button>Get in Touch</button></a></div>
   </section>
 
+  <!-- SERVICES -->
   <section style="margin-top:28px">
-    <h2>What we do</h2>
+    <h2>What We Do</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Performance Creative</h3>
-        <p class="small">Short-form video, carousels, and landing pages tailored to market news cycles and investor intent.</p>
+      <div class="card service reveal">
+        <h3 class="title">Stock Ticker Campaigns</h3>
+        <p>Build awareness for NASDAQ and NYSE-listed stocks with tailored campaigns that resonate with active traders.</p>
       </div>
-      <div class="card">
-        <h3>Paid Distribution</h3>
-        <p class="small">Campaigns across TikTok/Reels/YouTube + search/display. Clear tracking and lead routing.</p>
+      <div class="card service reveal">
+        <h3 class="title">Broker & Trading Platform Promotions</h3>
+        <p>Increase visibility for globally accessible financial services—from brokerages to trading platforms—with campaigns designed for maximum engagement.</p>
       </div>
-      <div class="card">
-        <h3>Content for Trust</h3>
-        <p class="small">Explainers, market snapshots, and case studies that educate first and convert naturally.</p>
+      <div class="card service reveal">
+        <h3 class="title">Multi-Channel Influencer Marketing</h3>
+        <p>Leverage a diverse network of finance-focused influencers to reach retail investors across channels, delivering measurable results and high ROI.</p>
       </div>
-      <div class="card">
-        <h3>Analytics & Compliance</h3>
-        <p class="small">UTM hygiene, funnel dashboards, and review flows aligned to your internal policies.</p>
+      <div class="card service reveal">
+        <h3 class="title">Custom Campaigns</h3>
+        <p>Have a unique promotion in mind? We design bespoke solutions for services, education, or investor-focused offerings.</p>
       </div>
+    </div>
+  </section>
+
+  <!-- WHY NCM -->
+  <section style="margin-top:28px">
+    <h2>Why Nova Catalyst Media</h2>
+    <div class="card reveal">
+      <p class="small">
+        We combine deep knowledge of financial markets with the power of influencer marketing.
+        Our team manages campaigns for a 7-figure global audience of active traders and investors.
+      </p>
+      <ul class="small">
+        <li><strong>Targeted Campaigns</strong> — Each promotion is tailored to your goals and audience.</li>
+        <li><strong>Transparent Reporting</strong> — Track performance and engagement at every step.</li>
+        <li><strong>Cost-Efficient Solutions</strong> — Impactful results without traditional advertising costs.</li>
+      </ul>
+      <p class="small">Whether you’re promoting a new stock, a brokerage, or a financial service, our goal is simple: help you reach, engage, and grow your investor base.</p>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="margin-top:28px">
+    <div class="cta reveal">
+      <h3 style="margin:0">Ready to Expand Your Investor Reach?</h3>
+      <p class="small" style="margin:0">Our team is ready to craft a campaign tailored to your needs — let’s start growing your audience today.</p>
+      <div><a href="contact.html"><button>Contact Us to Get Started</button></a></div>
     </div>
   </section>
 </main>
 
 <footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script>
+
+<script>
+document.getElementById('y').textContent = new Date().getFullYear();
+// subtle scroll reveal
+const els = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){ e.target.classList.add('show'); io.unobserve(e.target); }
+  });
+},{threshold:.12});
+els.forEach(el=>io.observe(el));
+</script>
 </body></html>
