@@ -101,3 +101,13 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
+/* --- Mobile nav fix --- */
+@media (max-width: 600px) {
+  nav div:last-child a {
+    font-size: 14px;       /* smaller font */
+    margin: 0 6px;         /* tighter spacing */
+  }
+  nav {
+    flex-wrap: wrap;       /* allows wrapping neatly if needed */
+  }
+}
