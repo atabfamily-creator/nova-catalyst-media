@@ -1,0 +1,67 @@
+<!doctype html><html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Contact — Nova Catalyst Media</title>
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header>
+  <nav>
+    <div style="display:flex;gap:10px;align-items:center">
+      <img class="logo" src="assets/logo.jpg" alt="Nova Catalyst Media logo" onerror="this.style.display='none'">
+      <strong>Nova Catalyst Media</strong>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a class="active" href="contact.html">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main class="container">
+  <h1>Contact us</h1>
+
+  <!-- Success message -->
+  <div id="success" class="card" style="display:none; border-left:4px solid #22c55e">
+    <p class="small"><strong>Thanks!</strong> We received your inquiry and will get back to you as soon as possible.</p>
+  </div>
+
+  <!-- Contact form -->
+  <div class="card" id="formCard">
+    <p class="small">Email: <a href="mailto:hello@reel-stays.com">hello@reel-stays.com</a></p>
+
+    <form action="https://formspree.io/f/xandgloj" method="POST">
+      <label>Name<br><input type="text" name="name" required></label><br><br>
+      <label>Email<br><input type="email" name="email" required></label><br><br>
+      <label>Message<br><textarea name="message" rows="6" required></textarea></label><br><br>
+
+      <!-- Spam protection: honeypot -->
+      <input type="text" name="_hp" style="display:none">
+
+      <!-- Subject line in your inbox -->
+      <input type="hidden" name="_subject" value="New message from Nova Catalyst Media">
+
+      <!-- Redirect to same page with success flag -->
+      <input type="hidden" name="_next" value="contact.html?sent=1">
+
+      <button type="submit">Send message</button>
+      <p class="small" style="margin-top:10px">We’ll reply within 1–2 business days.</p>
+    </form>
+  </div>
+</main>
+
+<footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
+
+<script>
+// Insert current year in footer
+document.getElementById('y').textContent = new Date().getFullYear();
+
+// If redirected with ?sent=1, show thank-you and hide form
+const params = new URLSearchParams(window.location.search);
+if (params.get('sent') === '1') {
+  document.getElementById('success').style.display = 'block';
+  document.getElementById('formCard').style.display = 'none';
+}
+</script>
+</body></html>
