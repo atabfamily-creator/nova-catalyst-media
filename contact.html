@@ -29,7 +29,7 @@
 
   <!-- Contact form -->
   <div class="card" id="formCard">
-    <p class="small">Email: <a href="mailto:hello@reel-stays.com">hello@reel-stays.com</a></p>
+    <p class="small">Email: <a href="mailto:contact@novacatalystmedia.com">contact@novacatalystmedia.com</a></p>
 
     <form action="https://formspree.io/f/xandgloj" method="POST">
       <label>Name<br><input type="text" name="name" required></label><br><br>
@@ -54,10 +54,9 @@
 <footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
 
 <script>
-// Insert current year in footer
+// Footer year
 document.getElementById('y').textContent = new Date().getFullYear();
-
-// If redirected with ?sent=1, show thank-you and hide form
+// Show thank-you message when redirected with ?sent=1
 const params = new URLSearchParams(window.location.search);
 if (params.get('sent') === '1') {
   document.getElementById('success').style.display = 'block';
