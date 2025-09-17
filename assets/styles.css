@@ -186,3 +186,16 @@ footer .container{color:#64748b}
 a:focus,.btn:focus,input:focus,textarea:focus{
   outline:3px solid var(--ring);outline-offset:2px;border-radius:10px;
 }
+
+/* Mobile nav adjustments */
+@media (max-width:640px){
+  nav{padding:10px 14px}
+  .nav-links a{font-size:14px}
+  nav strong{
+    font-size:14px;       /* smaller brand text */
+    max-width:45vw;       /* prevent overflow */
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+  }
+}
