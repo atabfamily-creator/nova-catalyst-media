@@ -47,7 +47,7 @@ img.logo{height:38px;border-radius:8px}
   box-shadow:0 8px 30px rgba(16,24,40,.05);
 }
 
-/* ---- Hero ---- */
+/* ---- Classic hero (kept for interior sections) ---- */
 .hero{
   display:grid;gap:18px;padding:50px 28px;border-radius:22px;
   background:rgba(255,255,255,.72);
@@ -57,11 +57,21 @@ img.logo{height:38px;border-radius:8px}
 .tagline{font-size:20px;font-weight:600;color:#1f2937}
 .subtext{color:var(--muted);max-width:70ch}
 
-/* ---- Grids ---- */
-.grid{display:grid;gap:18px;grid-template-columns:1fr}
-@media (min-width:700px){
-  .grid{grid-template-columns:repeat(2,1fr)}
+/* ---- NEW: Full-screen particle hero ---- */
+.full-screen{position:relative;height:100vh;min-height:520px;overflow:hidden}
+#tsparticles{position:absolute;inset:0;z-index:0}
+.hero-content{
+  position:relative;z-index:1;text-align:center;
+  top:40%;transform:translateY(-40%);
+  color:#e5e7eb; /* readable on dark particles bg */
+  padding:0 16px;
 }
+.hero-logo{width:96px;height:auto;margin:0 auto 16px;border-radius:12px}
+.hero-content h1{margin:0 0 10px;font-size:42px;line-height:1.1}
+.hero-content .tagline{font-size:20px;margin:0 0 18px;color:#cbd5e1}
+
+/* ---- Grids ---- */
+.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 .service .title{margin:0 0 6px}
 .service p{color:var(--muted)}
 
@@ -99,7 +109,7 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 .reveal{opacity:0; transform:translateY(12px)}
 .reveal.show{opacity:1; transform:none; transition:opacity .5s ease, transform .5s ease}
 
-/* ---------- Enhanced hero with collage ---------- */
+/* ---------- Optional: visual collage & banner sections (kept) ---------- */
 .hero-with-visual{
   position: relative;
   overflow: hidden;
@@ -131,7 +141,6 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 .hv-c{bottom:0;left:8%;width:44%;height:46%; animation-delay:.28s}
 .hv-d{bottom:-6%;right:6%;width:38%;height:40%; animation-delay:.38s}
 
-/* ---------- Parallax banner ---------- */
 .parallax-banner{
   position:relative;height:260px;border-radius:20px;overflow:hidden;
   background-image:url("https://images.unsplash.com/photo-1551281044-8af8c5f0363a?q=80&w=1600&auto=format&fit=crop");
@@ -145,8 +154,6 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
   color:#fff;display:flex;flex-direction:column;justify-content:center;padding:28px;
 }
 .parallax-overlay h3{margin:0 0 6px}
-
-/* ---------- Snapshots row ---------- */
 .snapshots{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
 .shot{margin:0}
 .shot img{width:100%;height:220px;object-fit:cover;border-radius:14px;border:1px solid rgba(15,23,42,.08);box-shadow:0 8px 24px rgba(0,0,0,.08)}
@@ -161,6 +168,8 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
   }
   nav > div:last-child { margin-left:auto; display:flex; align-items:center; white-space:nowrap; }
   nav > div:last-child a { font-size:14px; margin:0 6px; }
+  .hero-content h1{font-size:32px}
+  .hero-content .tagline{font-size:16px}
 }
 
 /* ---------- Responsive hero ---------- */
@@ -177,12 +186,3 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
-
-/* extra top spacing so it doesn't touch the card above */
-.parallax-banner{ margin-top:32px; }
-
-/* force white text inside the banner */
-.parallax-overlay h3,
-.parallax-overlay p,
-.parallax-overlay .small{ color:#fff; }
-.parallax-overlay{ backdrop-filter: blur(2px); }
