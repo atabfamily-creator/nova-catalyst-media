@@ -186,3 +186,26 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
+/* --- Light, contained particle hero (replaces the full-screen approach) --- */
+.particle-hero{
+  position:relative;
+  overflow:hidden;
+  border-radius:22px;
+  padding:50px 28px;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.8));
+  border:1px solid rgba(15,23,42,.08);
+  box-shadow:0 8px 30px rgba(16,24,40,.05);
+}
+.particle-hero #ncmParticles{
+  position:absolute; inset:0; z-index:0; opacity:.55;  /* subtle! */
+}
+.particle-hero .hero-content{ position:relative; z-index:1; }
+.particle-hero .hero-content h1{ margin:0 0 6px }
+.particle-hero .hero-content .tagline{ margin-bottom:10px }
+
+/* tighten hero on small screens */
+@media (max-width:640px){
+  .particle-hero{ padding:34px 18px }
+  .particle-hero .hero-content h1{ font-size:32px }
+  .particle-hero .hero-content .tagline{ font-size:16px }
+}
