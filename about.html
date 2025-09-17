@@ -1,17 +1,18 @@
-<!doctype html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>About — Nova Catalyst Media</title>
-<link rel="stylesheet" href="/assets/styles.css?v=2">
+<link rel="stylesheet" href="assets/styles.css?v=6">
 </head>
 <body>
 <header>
   <nav>
-    <div style="display:flex;gap:10px;align-items:center">
+    <div class="brand">
       <img class="logo" src="assets/logo.jpg" alt="Nova Catalyst Media logo" onerror="this.style.display='none'">
       <strong>Nova Catalyst Media</strong>
     </div>
-    <div>
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a class="active" href="about.html">About</a>
       <a href="contact.html">Contact</a>
@@ -19,29 +20,30 @@
   </nav>
 </header>
 
-<main class="container">
-  <h1>Who We Are</h1>
-  <div class="card reveal">
+<main class="container section prose">
+  <h1 class="page-title">Who We Are</h1>
+
+  <div class="card">
     <p class="small">
       Nova Catalyst Media was founded to bridge the gap between financial firms and the audiences that
-      matter most — engaged retail investors. We create campaigns that not only reach a large audience
+      matter most—engaged retail investors. We create campaigns that not only reach a large audience
       but also foster meaningful engagement, helping companies grow their investor base in a professional
       and compliant way.
     </p>
   </div>
 
-  <h2 style="margin-top:28px">Our Story</h2>
-  <div class="card reveal">
+  <h2 style="margin-top:24px">Our Story</h2>
+  <div class="card">
     <p class="small">
-      Our founders noticed that while financial markets attract millions of active participants, firms
-      often struggle to connect with the right investors efficiently. Nova Catalyst Media was born to solve
-      this — combining market knowledge, digital marketing expertise, and a network of finance-focused
-      influencers to deliver impactful campaigns.
+      Our founders noticed that while financial markets attract millions of active participants, firms often
+      struggle to connect with the right investors efficiently. Nova Catalyst Media was born to solve this—
+      combining market knowledge, digital marketing expertise, and a network of finance-focused influencers
+      to deliver impactful campaigns.
     </p>
   </div>
 
-  <h2 style="margin-top:28px">Our Philosophy</h2>
-  <div class="card reveal">
+  <h2 style="margin-top:24px">Our Philosophy</h2>
+  <div class="card">
     <ul class="small" style="margin:0">
       <li><strong>Transparency:</strong> Clear communication with clients at every stage.</li>
       <li><strong>Results-Driven:</strong> Every campaign is designed to generate measurable engagement.</li>
@@ -51,19 +53,21 @@
   </div>
 
   <section style="margin-top:28px">
-    <div class="cta reveal">
-      <h3 style="margin:0">Get in Touch with Nova Catalyst Media</h3>
-      <p class="small" style="margin:0">Email us at <a href="mailto:contact@novacatalystmedia.com">contact@novacatalystmedia.com</a> or use our contact form.</p>
-      <div><a href="contact.html"><button>Contact Us</button></a></div>
+    <div class="cta">
+      <div>
+        <h3 style="margin:0">Get in touch with Nova Catalyst Media</h3>
+        <p class="small" style="margin:0">
+          Email us at <a href="mailto:contact@novacatalystmedia.com">contact@novacatalystmedia.com</a> or use our contact form.
+        </p>
+      </div>
+      <a class="btn btn-primary" href="contact.html">Contact Us</a>
     </div>
   </section>
 </main>
 
-<footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
-<script>
-document.getElementById('y').textContent=new Date().getFullYear();
-const els=document.querySelectorAll('.reveal');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});
-els.forEach(el=>io.observe(el));
-</script>
-</body></html>
+<footer>
+  <div class="container small muted">© <span id="y"></span> Nova Catalyst Media</div>
+</footer>
+<script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+</body>
+</html>
