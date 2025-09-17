@@ -58,7 +58,10 @@ img.logo{height:38px;border-radius:8px}
 .subtext{color:var(--muted);max-width:70ch}
 
 /* ---- Grids ---- */
-.grid{display:grid;gap:18px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.grid{display:grid;gap:18px;grid-template-columns:1fr}
+@media (min-width:700px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
 .service .title{margin:0 0 6px}
 .service p{color:var(--muted)}
 
@@ -174,3 +177,12 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
+
+/* extra top spacing so it doesn't touch the card above */
+.parallax-banner{ margin-top:32px; }
+
+/* force white text inside the banner */
+.parallax-overlay h3,
+.parallax-overlay p,
+.parallax-overlay .small{ color:#fff; }
+.parallax-overlay{ backdrop-filter: blur(2px); }
