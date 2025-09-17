@@ -118,7 +118,7 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
   }
   /* Brand text smaller and ellipsized on very narrow screens */
   nav > div:first-child strong {
-    font-size: 16px;              /* was larger */
+    font-size: 14px;              /* was larger */
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
