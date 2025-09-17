@@ -22,25 +22,14 @@
 
 <main class="container">
 
-  <!-- HERO WITH IMAGE COLLAGE -->
-  <section class="hero hero-with-visual">
-    <div class="hero-copy">
+  <!-- FULL-SCREEN PARTICLE HERO -->
+  <section class="full-screen">
+    <div id="tsparticles"></div>
+    <div class="hero-content">
+      <img src="assets/logo.jpg" alt="Nova Catalyst Media" class="hero-logo">
       <h1>Nova Catalyst Media</h1>
       <p class="tagline">Reach. Engage. Grow Your Investor Base.</p>
-      <p class="subtext">
-        We specialize in connecting financial firms with highly engaged retail investors globally.
-        Through influencer-driven campaigns, we help your stocks, brokerages, and financial services
-        reach the right audience efficiently and effectively.
-      </p>
-      <div><a href="contact.html"><button>Get in Touch</button></a></div>
-    </div>
-
-    <!-- Collage (replace URLs later with /assets/your-image.jpg) -->
-    <div class="hero-visual" aria-hidden="true">
-      <img class="hv hv-a" src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?q=80&w=1200&auto=format&fit=crop" alt="">
-      <img class="hv hv-b" src="https://images.unsplash.com/photo-1543286386-713bdd548da4?q=80&w=1200&auto=format&fit=crop" alt="">
-      <img class="hv hv-c" src="https://images.unsplash.com/photo-1549421263-28e5d6b3f0b8?q=80&w=1200&auto=format&fit=crop" alt="">
-      <img class="hv hv-d" src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80&w=1200&auto=format&fit=crop" alt="">
+      <a href="contact.html"><button>Get in Touch</button></a>
     </div>
   </section>
 
@@ -123,10 +112,9 @@
 
 <footer class="container small">© <span id="y"></span> Nova Catalyst Media</footer>
 
+<!-- Footer year + reveal -->
 <script>
 document.getElementById('y').textContent = new Date().getFullYear();
-
-// scroll reveal
 const els = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver((entries)=>{
   entries.forEach(e=>{
@@ -134,5 +122,23 @@ const io = new IntersectionObserver((entries)=>{
   });
 },{threshold:.12});
 els.forEach(el=>io.observe(el));
+</script>
+
+<!-- Particles background -->
+<script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+<script>
+  tsParticles.load("tsparticles", {
+    background: { color: "#0d1117" },
+    particles: {
+      number: { value: 60 },
+      color: { value: "#ffffff" },
+      shape: { type: "circle" },
+      opacity: { value: 0.4 },
+      size: { value: { min: 1, max: 3 } },
+      move: { enable: true, speed: 1, outModes: "out" },
+      links: { enable: true, distance: 150, color: "#8b8b8b", opacity: 0.28, width: 1 }
+    },
+    interactivity: { events: { onHover: { enable: true, mode: "repulse" } } }
+  });
 </script>
 </body></html>
