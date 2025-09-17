@@ -101,13 +101,39 @@ footer{border-top:1px solid rgba(15,23,42,.08);margin-top:60px;padding:24px 20px
 @media (prefers-reduced-motion: reduce){
   *{animation:none !important; transition:none !important}
 }
-/* --- Mobile nav fix --- */
-@media (max-width: 600px) {
-  nav div:last-child a {
-    font-size: 14px;       /* smaller font */
-    margin: 0 6px;         /* tighter spacing */
-  }
+/* --- Mobile nav layout: keep brand left, links right (single row) --- */
+@media (max-width: 640px) {
   nav {
-    flex-wrap: wrap;       /* allows wrapping neatly if needed */
+    gap: 8px;
+    flex-wrap: nowrap;            /* don't wrap to next line */
+    padding: 10px 14px;           /* a bit tighter */
+  }
+
+  /* Left side: logo + brand text */
+  nav > div:first-child {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;                 /* allow ellipsis */
+  }
+  /* Brand text smaller and ellipsized on very narrow screens */
+  nav > div:first-child strong {
+    font-size: 16px;              /* was larger */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 55vw;              /* keep room for links */
+  }
+
+  /* Right side: links stay to the right in one row */
+  nav > div:last-child {
+    margin-left: auto;            /* push links to the right */
+    display: flex;
+    align-items: center;
+    white-space: nowrap;          /* keep links on one line */
+  }
+  nav > div:last-child a {
+    font-size: 14px;              /* smaller on mobile */
+    margin: 0 6px;                /* tighter spacing */
   }
 }
